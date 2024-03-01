@@ -98,7 +98,6 @@ server <- function(input, output) {
 
       ###########################
       panel.xyplot(d2$time, d2$y1, type = "l", col = "blue", lwd = 3,lty=1)
-      panel.xyplot(d2$time, d2$y2, type = "l", col = "blue", lwd = 3,lty=2)
       panel.xyplot(d2$time, d2$y3, type = "l", col = "black", lwd = 3,lty=3)
       panel.xyplot(d2$time, d2$y4, type = "l", col = "black", lwd = 3,lty=4)
 
@@ -108,9 +107,9 @@ server <- function(input, output) {
     plotresponse<- xyplot(0 ~ 0,
                    panel = pan2, xlab = "Time", ylab = "Response", subscripts = TRUE,
                    groups = 2, type = "p", xlim = c(-2, 200), ylim = c(-1, 1.5),
-                   key=list(text=list(c("Servo position So","Servo velocity x 20","Aaccessible compartment (S)",
-                                        "Not accessible compartment (C)"),col=(c("blue","blue","black","black"))),
-                            lines=list(lty=c(1,2,3,4), lwd=3,col=c("blue","blue","black","black"),
+                   key=list(text=list(c("Servo position So","Aaccessible compartment (S)",
+                                        "Not accessible compartment (C)"),col=(c("blue","black","black"))),
+                            lines=list(lty=c(1,2,4), lwd=3,col=c("blue","black","black"),
                                        divide=1, columns=2)))
     ############################################
     return(plotresponse)
